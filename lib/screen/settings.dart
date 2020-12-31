@@ -25,7 +25,8 @@ class Settings extends StatelessWidget{
                   backgroundColor: Theme.of(context).primaryColor,
                   child: CircleAvatar(
                     radius:50,
-                    backgroundImage: AssetImage('assets/images/lu.jpg'),
+                    backgroundColor: Colors.blueGrey,
+                    //backgroundImage: AssetImage('assets/images/.jpg'),
                   ),
                 ),
               ),
