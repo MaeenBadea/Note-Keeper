@@ -27,14 +27,10 @@ class Settings extends StatelessWidget{
              crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                child: CircleAvatar(
-                  radius:53,
-                  backgroundColor: Theme.of(context).primaryColor,
                   child: CircleAvatar(
-                    radius:50,
-                    backgroundColor: Colors.blueGrey,
-                    //backgroundImage: AssetImage('assets/images/.jpg'),
-                  ),
+                    backgroundColor: Colors.transparent,
+                    radius:60,
+                    backgroundImage: AssetImage('assets/images/flutter_icon.png'),
                 ),
               ),
               Padding(
