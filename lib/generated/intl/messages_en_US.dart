@@ -21,10 +21,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "add_note" : MessageLookupByLibrary.simpleMessage("Add Note"),
     "app_title" : MessageLookupByLibrary.simpleMessage("Epic note keeper"),
     "arabic" : MessageLookupByLibrary.simpleMessage("Arabic"),
     "delete" : MessageLookupByLibrary.simpleMessage("Delete"),
     "descrip" : MessageLookupByLibrary.simpleMessage("Description"),
+    "edit_note" : MessageLookupByLibrary.simpleMessage("Edit Note"),
     "high" : MessageLookupByLibrary.simpleMessage("High"),
     "low" : MessageLookupByLibrary.simpleMessage("Low"),
     "online" : MessageLookupByLibrary.simpleMessage("online"),

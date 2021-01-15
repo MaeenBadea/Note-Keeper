@@ -21,10 +21,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "add_note" : MessageLookupByLibrary.simpleMessage("اضافة"),
     "app_title" : MessageLookupByLibrary.simpleMessage("حافظ النوتات"),
     "arabic" : MessageLookupByLibrary.simpleMessage("العربية"),
     "delete" : MessageLookupByLibrary.simpleMessage("مسح"),
     "descrip" : MessageLookupByLibrary.simpleMessage("التفاصيل"),
+    "edit_note" : MessageLookupByLibrary.simpleMessage("تعديل"),
     "high" : MessageLookupByLibrary.simpleMessage("عالي"),
     "low" : MessageLookupByLibrary.simpleMessage("منخفض"),
     "online" : MessageLookupByLibrary.simpleMessage("استخدام الانترنت"),

@@ -144,6 +144,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Note`
+  String get edit_note {
+    return Intl.message(
+      'Edit Note',
+      name: 'edit_note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Note`
+  String get add_note {
+    return Intl.message(
+      'Add Note',
+      name: 'add_note',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
