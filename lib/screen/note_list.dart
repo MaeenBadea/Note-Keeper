@@ -45,7 +45,7 @@ class NoteListState extends State<NoteList>{
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
-          navigateToDetails(Note('', '', 2),"Add Note");
+          navigateToDetails(Note('', '', 2),S.of(context).add_note);
         },
         tooltip: "Add note",
 
@@ -76,7 +76,7 @@ class NoteListState extends State<NoteList>{
                 },
               ),
               onTap: (){
-                  navigateToDetails(this.noteList[index], "Edit Note");
+                  navigateToDetails(this.noteList[index], S.of(context).edit_note);
               },
             ),
           );
