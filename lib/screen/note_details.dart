@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:note_keeper/models/Note.dart';
 import 'package:note_keeper/redux/store.dart';
 import 'package:note_keeper/utils/Database_Helper.dart';
+import 'package:note_keeper/generated/l10n.dart';
 
 class NoteDetails extends StatefulWidget{
   final String barTitle;
@@ -17,9 +18,11 @@ class NoteDetails extends StatefulWidget{
   }
 }
 
+enum Pr  {HiGH , LOW}
 class NoteDetailsState extends State<NoteDetails>{
-  var _priorities  = [ "High","Low",  ];
+  var _priorities  = [ Pr.HiGH,Pr.LOW,  ];
   String bTitle="";
+
 
   DatabaseHelper helper = DatabaseHelper();
   Note note;
@@ -55,17 +58,18 @@ class NoteDetailsState extends State<NoteDetails>{
             padding: EdgeInsets.only(left: 10, right: 10, top: 15),
             child: ListView(
               children: [
-                Text("Priority"),
+                Text(S.of(context).priority),
                 ListTile(
-                    title: DropdownButton(
+                    title: DropdownButton<Pr>(
 
-                    value: updatePriorityToString(note.priority),
+                    value: updatePrIntToEnum(note.priority),
                     style: textStyle,
-                    items: _priorities.map((String pr){
-                      return DropdownMenuItem(child: Text(pr,) , value: (pr),);
+                    items: Pr.values.map((Pr pr){
+                      print('value lllllllllllll'+pr.toString());
+                      return DropdownMenuItem<Pr>(child: Text(prToString(pr)) , value: pr);
                     }).toList(),
                     onChanged: (userVal){
-                      print("got "+ userVal);
+                      //print("got "+ userVal);
                       setState(() {
                           updatePriorityAsInt(userVal);
                       });
@@ -83,7 +87,7 @@ class NoteDetailsState extends State<NoteDetails>{
                       note.title = titleController.text;
                     },
                     decoration: InputDecoration(
-                      labelText: "Title",
+                      labelText: S.of(context).title,
                       labelStyle: textStyle,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5)
@@ -102,7 +106,7 @@ class NoteDetailsState extends State<NoteDetails>{
                       note.description = descriptionController.text;
                     },
                     decoration: InputDecoration(
-                        labelText: "Description",
+                        labelText: S.of(context).descrip,
                         labelStyle: textStyle,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5)
@@ -121,7 +125,7 @@ class NoteDetailsState extends State<NoteDetails>{
                           padding: EdgeInsets.only(top: 5, bottom: 5),
                           color: Theme.of(context).primaryColorDark,
                           child: Text(
-                            "Delete",
+                            S.of(context).delete,
                             textScaleFactor: 1.5,
                             style: TextStyle(color: Colors.white),
                           ),
@@ -138,7 +142,7 @@ class NoteDetailsState extends State<NoteDetails>{
                             padding: EdgeInsets.only(top: 5, bottom: 5),
                             color: Theme.of(context).primaryColorDark,
                             child: Text(
-                              "Save",
+                              S.of(context).save,
                               textScaleFactor: 1.5,
                               style: TextStyle(color: Colors.white),
                             ),
@@ -160,24 +164,34 @@ class NoteDetailsState extends State<NoteDetails>{
   returnToPreviousScreen(){
     Navigator.pop(context , true);
   }
-  updatePriorityAsInt(String val){
+  updatePriorityAsInt(Pr val){
     switch(val){
-      case 'High':
+      case Pr.HiGH:
         note.priority=1;
         break;
-      case 'Low':
+      case Pr.LOW:
         note.priority =2;
         break;
     }
   }
-  String updatePriorityToString(int val){
-    String pr;
+  String prToString(Pr pr){
+    switch(pr){
+      case Pr.HiGH:
+        return S.of(context).high;
+        break;
+      case Pr.LOW:
+        return S.of(context).low;
+        break;
+    }
+  }
+  Pr updatePrIntToEnum(int val){
+    Pr pr;
     switch(val){
       case 1:
-        pr = _priorities[0];
+        pr = Pr.HiGH;
         break;
       case 2:
-        pr = _priorities[1];
+        pr = Pr.LOW;
         break;
     }
     return pr;

@@ -1,0 +1,15 @@
+{
+  "@@locale": "en_US",
+  "app_title": "Epic note keeper",
+  "save": "Save",
+  "delete": "Delete",
+  "settings": "Settings",
+  "online": "online",
+  "title":"Title",
+  "descrip": "Description",
+  "priority": "Priority",
+  "high": "High",
+  "low": "Low",
+  "arabic": "Arabic"
+
+}

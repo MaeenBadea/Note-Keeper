@@ -5,6 +5,7 @@ import 'package:note_keeper/screen/note_details.dart';
 import 'package:note_keeper/screen/settings.dart';
 import 'package:note_keeper/utils/Database_Helper.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:note_keeper/generated/l10n.dart';
 
 class NoteList extends StatefulWidget{
   @override
@@ -27,14 +28,14 @@ class NoteListState extends State<NoteList>{
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Epic Note Keeper"),
+        title: Text(S.of(context).app_title),
         actions: [
           GestureDetector(
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context){ return Settings();}));
             },
             child: Padding(
-              padding: EdgeInsets.only(right: 10),
+              padding: EdgeInsetsDirectional.only(end: 10),
               child: Icon(Icons.settings),
             ),
           )

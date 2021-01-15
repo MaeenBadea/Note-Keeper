@@ -7,6 +7,8 @@ AppState reducer(AppState prevState,dynamic action){
   if(action is setIsOnline){
     newState.isOnline = action.payload;
   }
-
+  if(action is setIsArabic){
+    newState.isArabic = action.payload;
+  }
   return newState;
 }

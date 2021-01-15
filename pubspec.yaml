@@ -23,15 +23,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   http: ^0.12.2
   sqflite: any
   path_provider: 1.6.24
-  intl: ^0.16.1
   redux: ^4.0.0+3
   redux_thunk: ^0.3.0
   flutter_redux: ^0.7.0
   redux_api_middleware: ^0.2.1
+  scoped_model: ^1.1.0
+
 
 
 
@@ -49,7 +52,7 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
-  assets:
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -85,3 +88,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
