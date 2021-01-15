@@ -10,6 +10,8 @@
   "priority": "Priority",
   "high": "High",
   "low": "Low",
-  "arabic": "Arabic"
+  "arabic": "Arabic",
+  "edit_note": "Edit Note",
+  "add_note": "Add Note"
 
 }
