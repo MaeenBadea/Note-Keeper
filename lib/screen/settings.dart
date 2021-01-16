@@ -4,8 +4,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:note_keeper/actions/actions.dart';
 import 'package:note_keeper/redux/app_state.dart';
 import 'package:note_keeper/generated/l10n.dart';
-import 'package:note_keeper/redux/store.dart';
 import 'package:note_keeper/screen/scoped_model_wrapper.dart';
+import 'package:note_keeper/utils/StorageUtils.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 
@@ -50,7 +50,9 @@ class Settings extends StatelessWidget{
                               return Switch(
                                   value: state.isArabic,
                                   onChanged: (bool userVal){
-                                    StoreProvider.of<AppState>(context).dispatch(setIsArabic(userVal));
+
+                                    StoreProvider.of<AppState>(context).dispatch(new setIsArabic(userVal));
+                                    StorageUtil.putBool("isArabic", userVal);
                                     model.changeDirection();
                                   });
 

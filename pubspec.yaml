@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  shared_preferences: ^0.5.12+4
   http: ^0.12.2
   sqflite: any
   path_provider: 1.6.24

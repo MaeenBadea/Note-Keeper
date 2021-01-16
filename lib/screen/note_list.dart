@@ -4,7 +4,6 @@ import 'package:note_keeper/redux/store.dart';
 import 'package:note_keeper/screen/note_details.dart';
 import 'package:note_keeper/screen/settings.dart';
 import 'package:note_keeper/utils/Database_Helper.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:note_keeper/generated/l10n.dart';
 
 class NoteList extends StatefulWidget{
