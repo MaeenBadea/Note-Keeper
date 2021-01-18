@@ -6,6 +6,8 @@ import 'package:note_keeper/redux/app_state.dart';
 import 'package:note_keeper/generated/l10n.dart';
 import 'package:note_keeper/screen/scoped_model_wrapper.dart';
 import 'package:note_keeper/utils/StorageUtils.dart';
+import 'package:note_keeper/utils/config.dart';
+import 'package:note_keeper/widgets/MyTheme.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 
@@ -64,6 +66,27 @@ class Settings extends StatelessWidget{
                         ),
 
                       Padding(padding: EdgeInsets.only(top: 5,bottom: 5),),
+                      //
+                      ListTile(
+                        title: Text(S.of(context).dark, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54, fontSize: 16),),
+                        trailing: StoreConnector<AppState,AppState>(
+                          converter: (store)=>store.state,
+                          builder: (context,state){
+                              return Switch(
+                                  value: MyTheme.dark,
+                                  onChanged: (bool userVal){
+                                    print("chaning dark state : "+userVal.toString());
+                                    currentTheme.switchTheme();
+                                    //StoreProvider.of<AppState>(context).dispatch(new setIsDark(userVal));
+                                  });
+                          },
+
+                        )
+                        ,
+                      ),
+
+                      Padding(padding: EdgeInsets.only(top: 5,bottom: 5),),
+                      //
                       ListTile(
                         title: Text(S.of(context).online, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54, fontSize: 16),),
                         trailing: StoreConnector<AppState, AppState>(

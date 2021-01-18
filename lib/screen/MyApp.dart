@@ -12,14 +12,66 @@ import 'package:note_keeper/screen/note_list.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:note_keeper/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import'package:note_keeper/utils/config.dart';
 
+class MyApp extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
 
-class MyApp extends StatelessWidget {
+}
+class MyAppState extends State<MyApp> {
   bool isArabic ;
   bool once = false;
 
+  final defaultTheme  = ThemeData(
 
-  // This widget is the root of your application.
+    primarySwatch: Colors.blue,
+    primaryColorLight: Colors.white,
+
+
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+
+  );
+  final lightTheme = ThemeData(
+    brightness: Brightness.light,
+    primaryColor: Colors.white,
+    accentColor: Colors.greenAccent,
+    bottomAppBarColor: Colors.greenAccent,
+    hintColor: Colors.yellowAccent,
+    textTheme: TextTheme(
+      title: TextStyle(
+        color: Colors.black,
+      ),
+    ),
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+  );
+  final darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.black,
+    accentColor: Colors.greenAccent,
+    hintColor: Colors.deepOrangeAccent,
+    bottomAppBarColor: Colors.grey,
+    textTheme: TextTheme(
+      title: TextStyle(
+        color: Colors.white,
+      ),
+    ),
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+  );
+
+
+  @override
+  void initState() {
+    super.initState();
+    currentTheme.addListener(() {
+      print("theme changed");
+      setState(() { });
+    });
+
+  } // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     
@@ -32,9 +84,10 @@ class MyApp extends StatelessWidget {
     {
       if(!once){
           isArabic = StorageUtil.getBool("isArabic");
-          print("got isArabic: "+ isArabic.toString());
+          print("got isArabic: $isArabic");
           model.setLang(isArabic?"ar":"en");
           StoreProvider.of<AppState>(context).dispatch(new setIsArabic(isArabic));
+
           once = true;
       }
      return  MaterialApp(
@@ -50,25 +103,9 @@ class MyApp extends StatelessWidget {
         supportedLocales: S.delegate.supportedLocales,
 
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.blue,
-          primaryColorLight: Colors.white,
-
-          // This makes the visual density adapt to the platform that you run
-          // the app on. For desktop platforms, the controls will be smaller and
-          // closer together (more dense) than on mobile platforms.
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-
-        ),
+        themeMode: currentTheme.currentTheme(),
+        theme: lightTheme,
+        darkTheme: darkTheme,
         home: NoteList(),
       );
     }

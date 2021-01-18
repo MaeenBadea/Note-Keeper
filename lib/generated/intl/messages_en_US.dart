@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note" : MessageLookupByLibrary.simpleMessage("Add Note"),
     "app_title" : MessageLookupByLibrary.simpleMessage("Epic note keeper"),
     "arabic" : MessageLookupByLibrary.simpleMessage("Arabic"),
+    "dark" : MessageLookupByLibrary.simpleMessage("Dark Theme"),
     "delete" : MessageLookupByLibrary.simpleMessage("Delete"),
     "descrip" : MessageLookupByLibrary.simpleMessage("Description"),
     "edit_note" : MessageLookupByLibrary.simpleMessage("Edit Note"),

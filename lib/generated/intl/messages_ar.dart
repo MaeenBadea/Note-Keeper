@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note" : MessageLookupByLibrary.simpleMessage("اضافة"),
     "app_title" : MessageLookupByLibrary.simpleMessage("حافظ النوتات"),
     "arabic" : MessageLookupByLibrary.simpleMessage("العربية"),
+    "dark" : MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
     "delete" : MessageLookupByLibrary.simpleMessage("مسح"),
     "descrip" : MessageLookupByLibrary.simpleMessage("التفاصيل"),
     "edit_note" : MessageLookupByLibrary.simpleMessage("تعديل"),

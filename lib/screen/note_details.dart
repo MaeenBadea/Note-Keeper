@@ -65,7 +65,6 @@ class NoteDetailsState extends State<NoteDetails>{
                     value: updatePrIntToEnum(note.priority),
                     style: textStyle,
                     items: Pr.values.map((Pr pr){
-                      print('value lllllllllllll'+pr.toString());
                       return DropdownMenuItem<Pr>(child: Text(prToString(pr)) , value: pr);
                     }).toList(),
                     onChanged: (userVal){
@@ -123,7 +122,7 @@ class NoteDetailsState extends State<NoteDetails>{
                         child: RaisedButton(
 
                           padding: EdgeInsets.only(top: 5, bottom: 5),
-                          color: Theme.of(context).primaryColorDark,
+                          color: Theme.of(context).accentColor,
                           child: Text(
                             S.of(context).delete,
                             textScaleFactor: 1.5,
@@ -140,7 +139,7 @@ class NoteDetailsState extends State<NoteDetails>{
 
                           child: RaisedButton(
                             padding: EdgeInsets.only(top: 5, bottom: 5),
-                            color: Theme.of(context).primaryColorDark,
+                            color: Theme.of(context).accentColor,
                             child: Text(
                               S.of(context).save,
                               textScaleFactor: 1.5,
