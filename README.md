@@ -4,7 +4,7 @@ This note keeper demo app is intended for flutter beginners, the app is very sim
 
 ## ScreenShots 
 <img src="screenshots/screen1.png" height="500em" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="screenshots/screen2.png" height="500em" />
-<img src="screenshots/rtl.gif" alt="demo1" width="35%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="screenshots/dark.gif" alt="demo2" width="35%"/>
+<img src="screenshots/rtl.gif" alt="demo1" width="36%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="screenshots/dark.gif" alt="demo2" width="36%"/>
 
 # about the app
 * App main language: Dart.
