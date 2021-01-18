@@ -19,6 +19,7 @@ This note keeper demo app is intended for flutter beginners, the app is very sim
 * http
 
 ## Next Steps
+* add a `dark` mode.
 * enable online mode and fetch notes from online server
 * add a `When` date field that would fire an alarm when due date comes to remind the user
 
