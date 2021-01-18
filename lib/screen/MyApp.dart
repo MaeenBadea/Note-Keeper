@@ -14,6 +14,9 @@ import 'package:note_keeper/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import'package:note_keeper/utils/config.dart';
 
+import 'package:flutter_animated_theme/flutter_animated_theme.dart';
+
+
 class MyApp extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -90,7 +93,7 @@ class MyAppState extends State<MyApp> {
 
           once = true;
       }
-     return  MaterialApp(
+     return  AnimatedThemeApp(
         locale: model.appLocal,
         localizationsDelegates: [
           // 1
@@ -106,6 +109,9 @@ class MyAppState extends State<MyApp> {
         themeMode: currentTheme.currentTheme(),
         theme: lightTheme,
         darkTheme: darkTheme,
+        animationDuration: Duration(milliseconds: 600),
+
+        animationType: AnimationType.CIRCULAR_ANIMATED_THEME,
         home: NoteList(),
       );
     }

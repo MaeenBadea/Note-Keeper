@@ -93,9 +93,11 @@ class Settings extends StatelessWidget{
                           converter: (store) => store.state,
                           builder: (context, state){
                             return Switch(
-                              value: state.isOnline,
+                              value: false,//state.isOnline,
                               onChanged: (bool userVal){
                                 StoreProvider.of<AppState>(context).dispatch(setIsOnline(userVal));
+                                final SnackBar snackBar = SnackBar(content: Text("Next Version!"));
+                                Scaffold.of(context).showSnackBar(snackBar);
                               },
 
                             );

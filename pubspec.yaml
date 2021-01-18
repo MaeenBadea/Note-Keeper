@@ -35,6 +35,8 @@ dependencies:
   flutter_redux: ^0.7.0
   redux_api_middleware: ^0.2.1
   scoped_model: ^1.1.0
+  flutter_animated_theme: ^0.9.0
+
 
 
 
